@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import socketIO from 'socket.io-client'
+
+const ENDPOINT = 'http://localhost:4500/'
+const socket = socketIO(ENDPOINT, {transports:['websocket']})
+
 
 function App() {
+
+// when socket will connect inside will execute
+  socket.on('connect', () => {
+
+  })
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+    working
+   </div>
   );
 }
 
