@@ -29,44 +29,43 @@ Ensure you have the following installed:
 ```bash
 git clone <repository-url>
 cd chat-app
+```
 
+- Navigate to the client folder:
+    ```bash
+    cd client
+    ```
+- Install dependencies:
+    ```bash
+    npm install
+    ```
+- Start the development server:
+    ```bash
+    npm start
+    ```
+- The frontend will be available at [http://localhost:3000](http://localhost:3000).
 
-## Frontend Setup
-Navigate to the client folder.
-bash
-Copy code
-cd client
-Install dependencies:
-bash
-Copy code
-npm install
-Start the development server:
-bash
-Copy code
-npm start
-The frontend will be available at http://localhost:3000.
+- Navigate to the server folder:
+    ```bash
+    cd server
+    ```
+- Install dependencies:
+    ```bash
+    npm install
+    ```
+- Start the server:
+    ```bash
+    node index.js
+    ```
+- The server will be running on [http://localhost:4500](http://localhost:4500).
 
-Backend Setup
-Navigate to the server folder.
-bash
-Copy code
-cd server
-Install dependencies:
-bash
-Copy code
-npm install
-Start the server:
-bash
-Copy code
-node index.js
-The server will be running on http://localhost:4500.
+## CORS Configuration
 
-CORS Configuration
 The server is configured to allow requests from the frontend (running on port 3000). If deploying to production, adjust the CORS settings as needed.
 
-File Structure
-bash
-Copy code
+## File Structure
+
+```bash
 /client
   /components
     /Join
@@ -79,25 +78,34 @@ Copy code
   App.css
 /server
   index.js
-How It Works
-Frontend (React):
+```
 
-Join.js: Users enter their name and are redirected to the chat room.
-Chat.js: Displays the chat interface, listens for new messages, and sends messages to the server via Socket.IO.
-Backend (Express & Socket.IO):
+## How It Works
 
-index.js: The server listens for connections, handles user joins, broadcasts messages, and handles disconnections.
-Socket.IO Communication:
+### Frontend (React):
 
-joined: Sent by the client when a user joins.
-message: Sent by the client when a user sends a message.
-sendMessage: Sent to all connected clients with the new message.
-userJoined & leave: Broadcasts when a user joins or leaves the chat room.
-Notes
-Users are assigned a unique socket.id when they connect, which is used to manage their messages.
-The application is designed to run locally for development purposes.
-Future Improvements
-User-to-user private messaging.
-Add user avatars or profile pictures.
-Implement message persistence using a database.
-Improve UI/UX with more advanced features.
+- **Join.js**: Users enter their name and are redirected to the chat room.
+- **Chat.js**: Displays the chat interface, listens for new messages, and sends messages to the server via Socket.IO.
+
+### Backend (Express & Socket.IO):
+
+- **index.js**: The server listens for connections, handles user joins, broadcasts messages, and handles disconnections.
+
+### Socket.IO Communication:
+
+- **joined**: Sent by the client when a user joins.
+- **message**: Sent by the client when a user sends a message.
+- **sendMessage**: Sent to all connected clients with the new message.
+- **userJoined & leave**: Broadcasts when a user joins or leaves the chat room.
+
+## Notes
+
+- Users are assigned a unique `socket.id` when they connect, which is used to manage their messages.
+- The application is designed to run locally for development purposes.
+
+## Future Improvements
+
+- User-to-user private messaging.
+- Add user avatars or profile pictures.
+- Implement message persistence using a database.
+- Improve UI/UX with more advanced features.
