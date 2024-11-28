@@ -1,4 +1,5 @@
 # C CHAT
+#  Real Time CHAT Web Application
 
 A simple real-time chat application using React, Socket.IO, and Express. This project allows users to join a chat room, send and receive messages in real-time. The server uses Socket.IO for communication, and the frontend is built using React with routing powered by React Router.
 
